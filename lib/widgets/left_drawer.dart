@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_news/screens/menu.dart';
 import 'package:football_news/screens/newslist_form.dart';
+import 'package:football_news/screens/news_entry_list.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -26,7 +27,6 @@ class LeftDrawer extends StatelessWidget {
                 Padding(padding: EdgeInsets.all(10)),
                 Text(
                   "Seluruh berita sepak bola terkini di sini!",
-                  // TODO: Tambahkan gaya teks dengan center alignment, font ukuran 15, warna putih, dan weight biasa
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 15,
@@ -59,12 +59,24 @@ class LeftDrawer extends StatelessWidget {
               );
             },
           ),
-          // TODO: Buat ListTile baru untuk ke halaman melihat news
           ListTile(
             leading: const Icon(Icons.article_outlined),
             title: const Text('See News'),
             onTap: () {
               // Untuk tutorial selanjutnya, jadi dikosongkan dulu
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('News List'),
+            onTap: () {
+              // Route to news list page
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NewsEntryListPage(),
+                ),
+              );
             },
           ),
         ],
